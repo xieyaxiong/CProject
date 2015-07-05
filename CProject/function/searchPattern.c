@@ -8,20 +8,20 @@
 #include<stdio.h>
 #define MAXLINE 1000
 
-int getLine(char line[], int max);
+static int getLine(char line[], int max);
 int stringIndex(char line[], char compare[]);
 int strindex(char s[], char t[]) ;
 
 char pattern[] = "ould";
 
-int main() {
-
-	char line[MAXLINE];
-	int count = getLine(line, MAXLINE);
-	printf("%d\t%s", count, line);
-	printf("%d\n", strindex(line, pattern));
-	return 0;
-}
+//int main() {
+//
+//	char line[MAXLINE];
+//	int count = getLine(line, MAXLINE);
+//	printf("%d\t%s", count, line);
+//	printf("%d\n", strindex(line, pattern));
+//	return 0;
+//}
 
 int stringIndex(char line[], char compare[]) {
 	int i;
@@ -50,7 +50,7 @@ int strindex(char s[], char t[]) {
 	return -1;
 }
 
-int getLine(char line[], int max) {
+static int getLine(char line[], int max) {
 	int i = 0;
 	char c;
 	while ((c = getchar()) != '\n') {
